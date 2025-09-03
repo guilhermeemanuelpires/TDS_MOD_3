@@ -65,6 +65,10 @@ app.put("/pessoas", (request, response) => {
         return response.send({mensagem: "Código da pessoa inválido!"});
     }
 
+    pessoa[0].nome = nome;
+    pessoa[0].telefone = telefone;
+    pessoa[0].status = status;
+
     return response.send(pessoa);
 
 });
