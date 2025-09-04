@@ -33,7 +33,7 @@ app.post("/pessoas", (request, response) => {
     return response.send(pessoas);
 });
 
-//FILTRA PESSOA PELO NOME 
+//FILTRA PESSOA PELO ID 
 app.get("/pessoas/:id", (request, response) => {
     const id = request.params.id;
 
@@ -48,6 +48,7 @@ app.get("/pessoas/:id", (request, response) => {
     return response.send(pessoa);
 });
 
+//ATUALIZAR UMA PESSOA JÁ EXISTENTE
 app.put("/pessoas", (request, response) => {
 
     const { id, nome, telefone, status } = request.body;
@@ -61,8 +62,8 @@ app.put("/pessoas", (request, response) => {
 
     const pessoa = pessoas.filter(item => item.id == id);
 
-    if (pessoa.length <= 0 ){
-        return response.send({mensagem: "Código da pessoa inválido!"});
+    if (pessoa.length <= 0) {
+        return response.send({ mensagem: "Código da pessoa inválido!" });
     }
 
     pessoa[0].nome = nome;
@@ -73,12 +74,22 @@ app.put("/pessoas", (request, response) => {
 
 });
 
+//DELETAR UMA PESSOA JÁ EXISTENTE
+app.delete("/pessoas/:id", (request, response) => {
+
+    const { id } = request.params;
+
+    const indexPessoas = pessoas.findIndex(i => i.id == id);
+
+    if (indexPessoas > -1) {
+        pessoas.splice(indexPessoas, 1);
+        return response.send({ mensagem: "Pessoa deletada com sucesso!" });
+    } else {
+        return response.send({ mensagem: "Ocódigo da pessoa não existe!˜" });
+    }
+
+});
+
 app.listen(8080, () => {
     console.log("o servidor está rodando na porta 8080.");
 });
-
-//ATUALIZAR UMA PESSOA JÁ EXISTENTE
-// app.put();
-
-//DELETAR UMA PESSOA JÁ EXISTENTE
-// app.delete();
