@@ -1,0 +1,154 @@
+type: collection.insomnia.rest/5.0
+name: SENAI_MOD3
+meta:
+  id: wrk_ab141eb8e5f542319ca0e39115229d22
+  created: 1756938296007
+  modified: 1756938296007
+  description: ""
+collection:
+  - url: "{{ _.baseUrl }}pessoas"
+    name: Consulta Todas as Pessoas
+    meta:
+      id: req_cba053d26306456aa9834bb94e8fd4d5
+      created: 1756767736610
+      modified: 1756938857218
+      isPrivate: false
+      description: ""
+      sortKey: -1756767736610
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.5.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}pessoas"
+    name: Cadastro de Pessoa
+    meta:
+      id: req_2081093086df436788ee4ad8548421e4
+      created: 1756773349210
+      modified: 1756938861106
+      isPrivate: false
+      description: ""
+      sortKey: -1756773349210
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "Mathues",
+        	"telefone": "46 999756359",
+        	"status": true
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.5.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}pessoas/3"
+    name: Consulta Pessoa Por ID
+    meta:
+      id: req_41f3ee2cb7234c8aa6b0f3cad8b4ae78
+      created: 1756774597661
+      modified: 1756939108337
+      isPrivate: false
+      description: ""
+      sortKey: -1756774597661
+    method: GET
+    parameters:
+      - name: ""
+        value: ""
+        disabled: false
+        id: pair_f81d639fa29747c59e17be444160cacc
+    headers:
+      - name: User-Agent
+        value: insomnia/11.5.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}pessoas"
+    name: Atualizar Pessoa
+    meta:
+      id: req_b4f230ecf30040348b8f0d101a155ef9
+      created: 1756854404305
+      modified: 1756938867812
+      isPrivate: false
+      description: ""
+      sortKey: -1756854404305
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 1,
+        	"nome": "Eduardo",
+        	"telefone": "45465767676",
+        	"status": true
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.5.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}pessoas/1"
+    name: New Request
+    meta:
+      id: req_bc8f7c417cda4f2e988ebe59b1edf16e
+      created: 1756938496023
+      modified: 1756939122641
+      isPrivate: false
+      description: ""
+      sortKey: -1756938496023
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.5.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_1945dcd1ab9d40c89b4ee81809540a85
+    created: 1756767731413
+    modified: 1756767731413
+environments:
+  name: Base Environment
+  meta:
+    id: env_adfe3952ca4e48dba7d620655ce0ecbe
+    created: 1756767731412
+    modified: 1756938663610
+    isPrivate: false
+  data:
+    baseUrl: http://localhost:8080/
