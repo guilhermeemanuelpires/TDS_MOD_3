@@ -1,11 +1,11 @@
 import { Router } from "express";
 import produtoController from "../controller/produto.controller.js";
-const router = Router();
+const routers = Router();
 
 //CRUD
-router.post("/cadastrar", produtoController.cadastrar);
-router.put("/atualizar", produtoController.atualizar);
-router.delete("/deletar", produtoController.deletar);
-router.get("/consultar", produtoController.consultar);
+routers.post("/cadastrar", produtoController.cadastrar);
+routers.put("/atualizar", produtoController.atualizar);
+routers.delete("/deletar", produtoController.deletar);
+routers.get("/consultar", produtoController.consultar);
 
-export default router;
+export default routers;
